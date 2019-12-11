@@ -1,0 +1,19 @@
+<agm-map
+  [latitude]="center.lat"
+  [longitude]="center.lng"
+  style="height: 600px"
+>
+  <agm-marker
+    [latitude]="item._geoloc.lat"
+    [longitude]="item._geoloc.lng"
+    [title]="item.name"
+    [animation]='DROP'
+    (mouseOver)="onMouseOver(infoWindow, $event)"
+    (mouseOut)="onMouseOut(infoWindow, $event)"
+    *ngFor="let item of state.items || []"
+  >
+  <agm-info-window #infoWindow>
+    <h2>{{item.name}}</h2>
+  </agm-info-window>
+  </agm-marker>
+</agm-map>

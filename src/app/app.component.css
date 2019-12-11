@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 0.5rem 1rem;
+  background-image: linear-gradient(to right, #c3002f, #dd0031);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.header-title::after {
+  content: ' ▸ ';
+  padding: 0 0.5rem;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.search-panel {
+  display: flex;
+}
+
+.search-panel__filters {
+  flex: 1;
+}
+
+.search-panel__results {
+  flex: 3;
+}
+
+.searchbox {
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.hit-description {
+  font-size: 12px;
+  line-height: 24px;
+  color: #878f96;
+  text-transform: uppercase;
+}
+
+.doctor_pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.top-head {
+  font-size: 12px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 8px 30px;
+  background-color: #143f52;
+  color: #fff;
+}
+
+.section-padding {
+  padding: 30px 25px;
+}
+
+.owl-item {
+  border-bottom-right-radius: 5px;
+  background-color: #fafafa;
+}
+

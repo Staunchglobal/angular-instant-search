@@ -1,0 +1,48 @@
+<div class="container mx-auto">
+  <div class="w-full h-12">
+    <ais-instantsearch [config]="config">
+      <div class="">
+        <div class="">
+          <ais-current-refinements></ais-current-refinements>
+          <ais-refinement-list attribute="brand"></ais-refinement-list>
+          <ais-configure [searchParameters]="{ hitsPerPage: 5, aroundLatLng: '40.71, -74.01',
+              maxFacetHits: 5, restrictSearchableAttributes: ['specialties']}"></ais-configure>
+          <ais-search-box></ais-search-box>
+          <ais-hits>
+            <ng-template let-hits="hits">
+              <div class="ais-Hits-list owl-carousel owl-theme">
+                <div *ngFor="let hit of hits" class="ais-Hits-item item">
+                  <div class="top-head">
+                    HSS, Sports Medicine 541 E 71st St
+                  </div>
+                  <div class="section-padding">
+                    <div class="flex flex-wrap">
+                      <div class="w-1/5">
+                        <img src="{{hit.photo_url}}" alt="{{hit.name}}" class="doctor_pic" />
+                      </div>
+                      <div class="w-4/5">
+                        <div class="hit-name">
+                          {{hit.name}}
+                        </div>
+                        <div class="hit-description">
+                          <ais-highlight attribute="specialties" [hit]="hit"></ais-highlight>
+                          <!-- <ais-highlight attribute="description" [hit]="hit"></ais-highlight> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="hit-price">${{hit.price}}</div> -->
+                </div>
+              </div>
+            </ng-template>
+          </ais-hits>
+        </div>
+        <div class="">
+          <br />
+          <app-geo-search></app-geo-search>
+          <!-- <ais-pagination></ais-pagination> -->
+        </div>
+      </div>
+    </ais-instantsearch>
+  </div>
+</div>
