@@ -1,73 +1,53 @@
 <div class="container mx-auto">
-  <div class="w-full h-12">
-    <ais-instantsearch [config]="config">
-      <div class="">
-        <div class="">
-          <ais-current-refinements></ais-current-refinements>
-          <ais-refinement-list attribute="brand"></ais-refinement-list>
-          <ais-configure [searchParameters]="{ hitsPerPage: 5, aroundLatLng: '40.71, -74.01',
+    <div class="w-full h-12">
+        <ais-instantsearch [config]="config">
+            <ais-current-refinements></ais-current-refinements>
+            <ais-refinement-list attribute="brand"></ais-refinement-list>
+            <ais-configure [searchParameters]="{ hitsPerPage: 5, aroundLatLng: '40.71, -74.01',
               maxFacetHits: 5, restrictSearchableAttributes: ['specialties']}"></ais-configure>
-          <ais-search-box></ais-search-box>
-          <ais-hits>
-            <ng-template let-hits="hits">
-              <div class="ais-Hits-list">
-                <owl-carousel-o [options]="customOptions">
-                    <ng-container *ngFor="let hit of hits">
-                        <ng-template carouselSlide [id]="hit.name">
-                          <!-- <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title"> -->
-                          <div class="top-head">
-                              HSS, Sports Medicine 541 E 71st St
-                            </div>
-                            <div class="section-padding">
-                              <div class="flex flex-wrap">
-                                <div class="w-1/5">
-                                  <img src="{{hit.photo_url}}" alt="{{hit.name}}" class="doctor_pic" />
-                                </div>
-                                <div class="w-4/5">
-                                  <div class="hit-name">
-                                    {{hit.name}}
-                                  </div>
-                                  <div class="hit-description">
-                                    <ais-highlight attribute="specialties" [hit]="hit"></ais-highlight>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </ng-template>
-                      </ng-container>
-                </owl-carousel-o>
-                    <!-- <div *ngFor="let hit of hits" class="ais-Hits-item item">
-                      <div class="top-head">
-                        HSS, Sports Medicine 541 E 71st St
-                      </div>
-                      <div class="section-padding">
-                        <div class="flex flex-wrap">
-                          <div class="w-1/5">
-                            <img src="{{hit.photo_url}}" alt="{{hit.name}}" class="doctor_pic" />
-                          </div>
-                          <div class="w-4/5">
-                            <div class="hit-name">
-                              {{hit.name}}
-                            </div>
-                            <div class="hit-description">
-                              <ais-highlight attribute="specialties" [hit]="hit"></ais-highlight>
-                              <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="hit-price">${{hit.price}}</div>
-                    </div> -->
-              </div>
-            </ng-template>
-          </ais-hits>
-        </div>
-        <div class="">
-          <br />
-          <app-geo-search></app-geo-search>
-          <!-- <ais-pagination></ais-pagination> -->
-        </div>
-      </div>
-    </ais-instantsearch>
-  </div>
+            <ais-search-box></ais-search-box>
+            <app-geo-search></app-geo-search>
+            <ais-hits>
+                <ng-template let-hits="hits">
+                    <div class="ais-Hits-list my-5 py-5">
+                        <owl-carousel-o [options]="customOptions">
+                            <ng-container *ngFor="let hit of hits">
+                                <ng-template carouselSlide [id]="hit.name">
+                                    <!-- <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title"> -->
+                                    <div class="top-head">
+                                        HSS, Sports Medicine 541 E 71st St
+                                    </div>
+                                    <div class="section-padding">
+                                        <div class="flex flex-wrap">
+                                            <div class="w-2/6">
+                                                <img src="{{hit.photo_url}}" alt="{{hit.name}}" class="doctor_pic" />
+                                            </div>
+                                            <div class="w-4/6">
+                                                <h3 class="hit-name">
+                                                    {{hit.name}}
+                                                </h3>
+                                                <div class="hit-description">
+                                                  <span *ngFor="let specialty of hit.specialties">
+                                                    {{specialty}}, 
+                                                  </span>
+                                                    <!-- <ais-highlight attribute="specialties" [hit]="hit"></ais-highlight> -->
+                                                </div>
+                                                <div class="hit-bookmark">Save</div>
+                                            </div>
+                                            <div class="hit-features">"Very professional. Dr Kelly & his staff are very responsive and in tune with their patient's recoveries."</div>
+                                            <hr class="w-full my-3" />
+                                            <a href="#" class="bg-red-500 text-white inline-block align-middle text-center select-none border font-normal whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline">
+                                                Book Appointment
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
+                    </div>
+                </ng-template>
+            </ais-hits>
+            
+        </ais-instantsearch>
+    </div>
 </div>

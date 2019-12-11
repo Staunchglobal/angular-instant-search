@@ -1,87 +1,73 @@
 .header {
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-  padding: 0.5rem 1rem;
-  background-image: linear-gradient(to right, #c3002f, #dd0031);
-  color: #fff;
-  margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    padding: 0.5rem 1rem;
+    background-image: linear-gradient(to right, #c3002f, #dd0031);
+    color: #fff;
+    margin-bottom: 1rem;
 }
 
 .header a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 .header-title {
-  font-size: 1.2rem;
-  font-weight: normal;
+    font-size: 1.2rem;
+    font-weight: normal;
 }
 
 .header-title::after {
-  content: ' ▸ ';
-  padding: 0 0.5rem;
+    content: ' ▸ ';
+    padding: 0 0.5rem;
 }
 
 .header-subtitle {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .search-panel {
-  display: flex;
+    display: flex;
 }
 
 .search-panel__filters {
-  flex: 1;
+    flex: 1;
 }
 
 .search-panel__results {
-  flex: 3;
+    flex: 3;
 }
 
 .searchbox {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .pagination {
-  margin: 2rem auto;
-  text-align: center;
-}
-
-.hit-description {
-  font-size: 12px;
-  line-height: 24px;
-  color: #878f96;
-  text-transform: uppercase;
+    margin: 2rem auto;
+    text-align: center;
 }
 
 .doctor_pic {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 40px;
 }
 
-.top-head {
+.hit-bookmark{
   font-size: 12px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 8px 30px;
-  background-color: #143f52;
-  color: #fff;
+  color: #d39f93;
 }
 
-.section-padding {
-  padding: 30px 25px;
+.hit-features{
+  color: #878f96;
+  font-size: 13px;
+  line-height: 22px;
+  margin-top: 10px;
 }
-
-.owl-item {
-  border-bottom-right-radius: 5px;
-  background-color: #fafafa;
-}
-
