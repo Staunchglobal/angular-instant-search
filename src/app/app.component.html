@@ -10,29 +10,54 @@
           <ais-search-box></ais-search-box>
           <ais-hits>
             <ng-template let-hits="hits">
-              <div class="ais-Hits-list owl-carousel owl-theme">
-                <div *ngFor="let hit of hits" class="ais-Hits-item item">
-                  <div class="top-head">
-                    HSS, Sports Medicine 541 E 71st St
-                  </div>
-                  <div class="section-padding">
-                    <div class="flex flex-wrap">
-                      <div class="w-1/5">
-                        <img src="{{hit.photo_url}}" alt="{{hit.name}}" class="doctor_pic" />
+              <div class="ais-Hits-list">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let hit of hits">
+                        <ng-template carouselSlide [id]="hit.name">
+                          <!-- <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title"> -->
+                          <div class="top-head">
+                              HSS, Sports Medicine 541 E 71st St
+                            </div>
+                            <div class="section-padding">
+                              <div class="flex flex-wrap">
+                                <div class="w-1/5">
+                                  <img src="{{hit.photo_url}}" alt="{{hit.name}}" class="doctor_pic" />
+                                </div>
+                                <div class="w-4/5">
+                                  <div class="hit-name">
+                                    {{hit.name}}
+                                  </div>
+                                  <div class="hit-description">
+                                    <ais-highlight attribute="specialties" [hit]="hit"></ais-highlight>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </ng-template>
+                      </ng-container>
+                </owl-carousel-o>
+                    <!-- <div *ngFor="let hit of hits" class="ais-Hits-item item">
+                      <div class="top-head">
+                        HSS, Sports Medicine 541 E 71st St
                       </div>
-                      <div class="w-4/5">
-                        <div class="hit-name">
-                          {{hit.name}}
-                        </div>
-                        <div class="hit-description">
-                          <ais-highlight attribute="specialties" [hit]="hit"></ais-highlight>
-                          <!-- <ais-highlight attribute="description" [hit]="hit"></ais-highlight> -->
+                      <div class="section-padding">
+                        <div class="flex flex-wrap">
+                          <div class="w-1/5">
+                            <img src="{{hit.photo_url}}" alt="{{hit.name}}" class="doctor_pic" />
+                          </div>
+                          <div class="w-4/5">
+                            <div class="hit-name">
+                              {{hit.name}}
+                            </div>
+                            <div class="hit-description">
+                              <ais-highlight attribute="specialties" [hit]="hit"></ais-highlight>
+                              <ais-highlight attribute="description" [hit]="hit"></ais-highlight>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <!-- <div class="hit-price">${{hit.price}}</div> -->
-                </div>
+                      <div class="hit-price">${{hit.price}}</div>
+                    </div> -->
               </div>
             </ng-template>
           </ais-hits>
