@@ -17,12 +17,10 @@ const searchClient = algoliasearch(
 export class AppComponent {
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
     dots: false,
+    center: true,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['<', '>'],
     responsive: {
       0: {
         items: 1
@@ -34,7 +32,7 @@ export class AppComponent {
         items: 3
       },
       940: {
-        items: 4
+        items: 3
       }
     },
     nav: true

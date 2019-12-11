@@ -5,3 +5,6 @@ yarn-error.log
 dist/
 
 /src/environments/environment.ts
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
